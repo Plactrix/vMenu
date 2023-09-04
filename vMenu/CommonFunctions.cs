@@ -1335,6 +1335,8 @@ namespace vMenuClient
             Log($"New vehicle, hash:{vehicleHash}, handle:{vehicle.Handle}, force-re-save-name:{saveName ?? "NONE"}, created at x:{pos.X} y:{pos.Y} z:{pos.Z + 1f} " +
                 $"heading:{heading}");
 
+            TriggerEvent("vMenu:vehicleSpawned", vehicleHash.ToString(), vehicle.Handle);
+
             // If spawnInside is true
             if (spawnInside)
             {
